@@ -1,6 +1,6 @@
 pip install huggingface_hub ipython "unsloth[colab] @ git+https://github.com/unslothai/unsloth.git" "unsloth[conda] @ git+https://github.com/unslothai/unsloth.git"
 
-export HF_TOKEN=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
+export HF_TOKEN=
 
 python app.py
 
