@@ -8,14 +8,16 @@ python local.py
 
 touch Modelfile
 
+# TODO: Change username and model name to desired names
 ollama create -f Modelfile gportx/llama3.1-python
 
+# TODO: Change to run correct model
 ollama run gportx/llama3.1-python
 
-ssh-keygen -t ed25519 -N ""
+# To get key to add to Ollama keys
+cat ~/.ollama/id_ed25519.pub
 
-sudo cp ~/.ssh/id_ed25519 /usr/share/ollama/.ollama
-
+# TODO: Change to correct model name
 ollama push gportx/llama3.1-python
 
 
