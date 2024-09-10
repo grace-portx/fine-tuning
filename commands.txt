@@ -1,0 +1,21 @@
+pip install huggingface_hub ipython "unsloth[colab] @ git+https://github.com/unslothai/unsloth.git" "unsloth[conda] @ git+https://github.com/unslothai/unsloth.git"
+
+export HF_TOKEN=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
+
+python app.py
+
+python local.py
+
+touch Modelfile
+
+ollama create -f Modelfile gportx/llama3.1-python
+
+ollama run gportx/llama3.1-python
+
+ssh-keygen -t ed25519 -N ""
+
+sudo cp ~/.ssh/id_ed25519 /usr/share/ollama/.ollama
+
+ollama push gportx/llama3.1-python
+
+
