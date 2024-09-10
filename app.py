@@ -24,11 +24,11 @@ alpaca_prompt = """Below is an instruction that describes a task, paired with an
 
 instruction = "Create a function to calculate the sum of a sequence of integers."
 input = "[1, 2, 3, 4, 5]"
-huggingface_model_name = "gportx/Llama-3.1-8B-bnb-4bit-python"
+huggingface_model_name = "gportx/Llama-3.1-8B-bnb-4bit-python"     # TODO: Change username to your username and name of model to desired name.
 
 # 2. Before Training
 model, tokenizer = FastLanguageModel.from_pretrained(
-    model_name = "unsloth/Meta-Llama-3.1-8B-bnb-4bit",
+    model_name = "unsloth/Meta-Llama-3.1-8B-bnb-4bit",       # TODO: Change if using a different base model.
     max_seq_length = max_seq_length,
     dtype = dtype,
     load_in_4bit = load_in_4bit,
@@ -61,7 +61,7 @@ def formatting_prompts_func(examples):
         texts.append(text)
     return { "text" : texts, }
 pass
-dataset = load_dataset("iamtarun/python_code_instructions_18k_alpaca", split = "train")
+dataset = load_dataset("iamtarun/python_code_instructions_18k_alpaca", split = "train")      # TODO: Change if using different dataset than the one specified.
 dataset = dataset.map(formatting_prompts_func, batched = True,)
 
 # 4. Training
